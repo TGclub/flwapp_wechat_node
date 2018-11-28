@@ -1,0 +1,29 @@
+{
+  "name": "flwapp_wechat_node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/index.js",
+    "build": "eslint ./src && babel ./src --out-dir ./dist",
+    "serve": "node dist/index.js",
+    "v": "babel -h"
+  },
+  "author": "acery.ycy",
+  "license": "ISC",
+  "dependencies": {
+    "@log4js-node/smtp": "^1.0.1",
+    "express": "^4.16.4",
+    "log4js": "^3.0.6",
+    "wechat": "^2.1.0",
+    "wechat-api": "^1.35.1"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "debug": "^4.1.0",
+    "nodemon": "^1.18.7"
+  }
+}
