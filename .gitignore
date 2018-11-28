@@ -8,6 +8,9 @@
 # production
 /dist
 /build 
-
+/logs
 # misc
 .DS_Store
+
+# private key
+/src/keys

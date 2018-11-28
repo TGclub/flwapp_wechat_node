@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js",
+    "dev": "NODE_ENV=dev nodemon --exec babel-node src/index.js",
     "build": "eslint ./src && babel ./src --out-dir ./dist",
-    "serve": "node dist/index.js",
-    "v": "babel -h"
+    "serve": "NODE_ENV=prod node dist/index.js",
+    "clean-log": "rm -rf ./logs",
+    "test": "NODE_ENV=prod nodemon --exec babel-node src/index.js"
   },
   "author": "acery.ycy",
   "license": "ISC",
