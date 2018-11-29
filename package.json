@@ -8,6 +8,8 @@
     "build": "eslint ./src && babel ./src --out-dir ./dist",
     "serve": "NODE_ENV=prod node dist/index.js",
     "clean-log": "rm -rf ./logs",
+    "clean-dist": "rm -rf ./dist",
+    "refresh": "rm -rf ./node_modules && cnpm install",
     "test": "NODE_ENV=prod nodemon --exec babel-node src/index.js"
   },
   "author": "acery.ycy",
@@ -17,7 +19,8 @@
     "express": "^4.16.4",
     "log4js": "^3.0.6",
     "wechat": "^2.1.0",
-    "wechat-api": "^1.35.1"
+    "wechat-api": "^1.35.1",
+    "xml2json": "^0.11.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
