@@ -1,9 +1,18 @@
-import log4js from 'log4js';
-import logConfig from './config/log.config';
+import express from 'express';
 
-log4js.configure(logConfig);
+// middleware
+import logger from './middlewares/logger';
 
-const debug = log4js.getLogger('email');
+const app = express();
 
-debug.error(new Error('dd'));
+app.use(logger);
 
+app.use('/', (req, res) => {
+  res.logEmail.error('hello world');
+  res.write('done');
+  res.end();
+});
+
+app.listen(3000, () => {
+  console.log('listen 3000');
+});
