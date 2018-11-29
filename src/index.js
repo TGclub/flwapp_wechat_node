@@ -9,8 +9,10 @@ import clickRoute from './routes/click';
 
 const app = express();
 
-app.use(logger);
-app.use(wxAPI);
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(logger); // mount res.logEmail/logError/logNormal
+app.use(wxAPI); // mount res.wxAPI
 
 app.use('/click', clickRoute);
 

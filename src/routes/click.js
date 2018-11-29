@@ -22,4 +22,20 @@ router.get('/', (req, res) => {
   res.write('done');
   res.end();
 });
+
+router.post('/test', (req, res) => {
+  req.rawBody = '';
+  req.setEncoding('utf8');
+  req.on('data', (chunk) => {
+    req.rawBody += chunk;
+  });
+
+  req.on('end', () => {
+    const json = xml2json.toJson(req.rawBody);
+    // {"xml":{"ToUserName":"toUser","FromUserName":"FromUser","CreateTime":"123456789","MsgType":"event","Event":"CLICK","EventKey":"EVENTKEY"}}
+    res.send(json);
+    res.end();
+  });
+});
+
 export default router;
