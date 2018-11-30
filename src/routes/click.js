@@ -5,8 +5,8 @@
 import wechat from 'wechat';
 import xml2json from 'xml2json';
 import wechatConfig from '../keys/wechatAccount.json';
-const router = require('express').Router();
 
+const router = require('express').Router();
 
 /**
  * /click/donate
